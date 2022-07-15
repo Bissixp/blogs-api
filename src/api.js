@@ -1,7 +1,7 @@
 const express = require('express');
 require('express-async-errors');
-const loginRouter = require('./database/routes/loginRoute');
-const errorMiddlewareHandler = require('./database/middlewares/errorHandlerMiddleware');
+const loginRouter = require('./routes/loginRoute');
+const errorMiddlewareHandler = require('./middlewares/errorHandlerMiddleware');
 
 // ...
 

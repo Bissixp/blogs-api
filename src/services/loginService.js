@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const models = require('../models');
+const models = require('../database/models');
 const { throwInvalidFields } = require('./utils');
 
 const usersService = {
