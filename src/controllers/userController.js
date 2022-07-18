@@ -12,7 +12,7 @@ const loginController = {
 
   /** @type {import('express').RequestHandler} */
   async getAll(req, res) {
-    await userService.validateAuthorization(req.headers.authorization);
+    await authService.validateAuthorization(req.headers.authorization);
     await authService.readToken(req.headers.authorization);
     const users = await userService.getAll();
     res.status(200).json(users);
@@ -20,7 +20,7 @@ const loginController = {
 
     /** @type {import('express').RequestHandler} */
     async getById(req, res) {
-      await userService.validateAuthorization(req.headers.authorization);
+      await authService.validateAuthorization(req.headers.authorization);
       await authService.readToken(req.headers.authorization);
       const users = await userService.getById(req.params);
       res.status(200).json(users);
