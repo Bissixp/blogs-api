@@ -3,6 +3,7 @@ const errors = {
   InvalidFields: 400,
   NotFoundError: 400,
   TokenError: 401,
+  NotExist: 404,
   SameEmail: 409,
 };
 

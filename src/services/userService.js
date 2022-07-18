@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const models = require('../database/models');
-const { throwSameEmail, throwTokenError } = require('./utils');
+const { throwSameEmail, throwTokenError, throwNotExistError } = require('./utils');
 
 const userService = {
 async validadeAddBody(body) {
@@ -50,6 +50,17 @@ async getAll() {
  );
  return getAllUsers;
 },
+
+async getById(body) {
+  const { id } = body;
+  const getById = await models.User.findByPk(
+   id,
+   { attributes: { exclude: ['password'] } },
+   { raw: true },
+  );
+  if (!getById) throwNotExistError('User does not exist');
+  return getById;
+ },
 };
 
 module.exports = userService;

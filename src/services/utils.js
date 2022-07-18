@@ -22,9 +22,16 @@ const throwTokenError = (message) => {
   throw err;
 };
 
+const throwNotExistError = (message) => {
+  const err = new Error(message);
+  err.name = 'NotExist';
+  throw err;
+};
+
 module.exports = {
   throwNotFoundError,
   throwInvalidFields,
   throwSameEmail,
   throwTokenError,
+  throwNotExistError,
 };

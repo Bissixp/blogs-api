@@ -17,6 +17,14 @@ const loginController = {
     const users = await userService.getAll();
     res.status(200).json(users);
   },
+
+    /** @type {import('express').RequestHandler} */
+    async getById(req, res) {
+      await userService.validateAuthorization(req.headers.authorization);
+      await authService.readToken(req.headers.authorization);
+      const users = await userService.getById(req.params);
+      res.status(200).json(users);
+    },
 };
 
 module.exports = loginController;
