@@ -2,17 +2,14 @@ const Joi = require('joi');
 const models = require('../database/models');
 const { throwInvalidFields } = require('./utils');
 
-const usersService = {
+const loginService = {
 async validadeBody(body) {
   const schema = Joi.object({
-    email: Joi.string().required().email().messages({
-      'string.empty': 'Some required fields are missing',
-      'any.required': 'Some required fields are missing',
-    }),
-    password: Joi.string().required().messages({
-      'string.empty': 'Some required fields are missing',
-      'any.required': 'Some required fields are missing',
-    }),
+    email: Joi.string().required().email(),
+    password: Joi.string().required(),
+  }).messages({
+    'string.empty': 'Some required fields are missing',
+    'any.required': 'Some required fields are missing',
   });
   const result = await schema.validateAsync(body);
   return result;
@@ -30,4 +27,4 @@ async checkUser(body) {
 },
 };
 
-module.exports = usersService;
+module.exports = loginService;

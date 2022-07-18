@@ -10,7 +10,14 @@ const throwInvalidFields = (message = 'Invalid fields') => {
   throw err;
 };
 
+const throwSameEmail = (message = 'User already registered') => {
+  const err = new Error(message);
+  err.name = 'SameEmail';
+  throw err;
+};
+
 module.exports = {
   throwNotFoundError,
   throwInvalidFields,
-}; 
+  throwSameEmail,
+};

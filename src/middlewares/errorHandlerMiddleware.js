@@ -2,6 +2,7 @@ const errors = {
   ValidationError: 400,
   InvalidFields: 400,
   NotFoundError: 400,
+  SameEmail: 409,
 };
 
 /**
