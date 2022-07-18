@@ -16,8 +16,15 @@ const throwSameEmail = (message = 'User already registered') => {
   throw err;
 };
 
+const throwTokenError = (message) => {
+  const err = new Error(message);
+  err.name = 'TokenError';
+  throw err;
+};
+
 module.exports = {
   throwNotFoundError,
   throwInvalidFields,
   throwSameEmail,
+  throwTokenError,
 };

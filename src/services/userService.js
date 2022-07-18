@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const models = require('../database/models');
-const { throwSameEmail } = require('./utils');
+const { throwSameEmail, throwTokenError } = require('./utils');
 
 const userService = {
 async validadeAddBody(body) {
@@ -12,6 +12,17 @@ async validadeAddBody(body) {
   });
   const result = await schema.validateAsync(body);
   return result;
+},
+
+async validateAuthorization(auth) {
+  const schema = Joi.string().required();
+  try {
+    const result = await schema.validateAsync(auth);
+    const [, token] = result.split(' ');
+    return token;
+  } catch (error) {
+    throwTokenError('Token not found');
+  }
 },
 
 async checkUser(body) {
@@ -30,6 +41,14 @@ async checkUser(body) {
     const addUser = await models.User.create(add);
     const createUser = addUser.toJSON();
     return createUser;
+},
+
+async getAll() {
+ const getAllUsers = await models.User.findAll(
+  { attributes: { exclude: ['password'] } },
+  { raw: true },
+ );
+ return getAllUsers;
 },
 };
 
