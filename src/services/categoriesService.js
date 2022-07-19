@@ -18,6 +18,14 @@ async addCategory(body) {
     });
     return newCategory;
 },
+
+async getAll() {
+  const getAllCategories = await models.Category.findAll(
+   { raw: true },
+  );
+  return getAllCategories;
+ },
+
 };
 
 module.exports = categoryService;

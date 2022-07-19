@@ -10,6 +10,14 @@ const categoriesController = {
       const category = await categoriesService.addCategory(nameValidate);
       res.status(201).json(category);
     },
+
+    /** @type {import('express').RequestHandler} */
+    async getAll(req, res) {
+    await authService.validateAuthorization(req.headers.authorization);
+    await authService.readToken(req.headers.authorization);
+    const categories = await categoriesService.getAll();
+    res.status(200).json(categories);
+  },
 };
 
 module.exports = categoriesController;
