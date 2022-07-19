@@ -7,32 +7,35 @@ const atributtes = {
     primaryKey: true,
     type: DataTypes.INTEGER,
   },
-  displayName: {
+  title: {
     type: DataTypes.STRING,
   },
-  email: {
+  content: {
     type: DataTypes.STRING,
   },
-  password: {
-    type: DataTypes.STRING,
+  userId: {
+    type: DataTypes.INTEGER,
+    foreignKey: true,
   },
-  image: {
-    type: DataTypes.STRING,
+  published: {
+    type: DataTypes.DATE,
+  },
+  updated: {
+    type: DataTypes.DATE,
   },
 }
 
 /** @param {import ('sequelize').Sequelize} sequelize */
 module.exports = (sequelize) => {
- const model = sequelize.define('User', atributtes, {
-   tableName:'Users',
+ const model = sequelize.define('BlogPost', atributtes, {
+   tableName:'BlogPosts',
    timestamps: false,
   });
 
   model.associate = (models) => {
-    model.hasMany(models.BlogPost,
-      {foreignKey: 'id', as: 'BlogPosts'})
+    model.belongsTo(models.User,
+      {foreignKey: 'userId', as: 'Users'})
   };
-
   return model;
 }
 
