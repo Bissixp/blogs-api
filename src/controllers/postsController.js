@@ -12,6 +12,14 @@ const postController = {
     const blogPost = await postService.add(id, req.body);
     res.status(201).json(blogPost);
   },
+
+   /** @type {import('express').RequestHandler} */
+   async getAllPosts(req, res) {
+    await authService.validateAuthorization(req.headers.authorization);
+    await authService.readToken(req.headers.authorization);
+    const allPosts = await postService.getAllPosts();
+    res.status(200).json(allPosts);
+  },
 };
 
 module.exports = postController;
