@@ -20,6 +20,15 @@ const postController = {
     const allPosts = await postService.getAllPosts();
     res.status(200).json(allPosts);
   },
+
+     /** @type {import('express').RequestHandler} */
+     async getPostById(req, res) {
+      await authService.validateAuthorization(req.headers.authorization);
+      await authService.readToken(req.headers.authorization);
+      const postById = await postService.getPostById(req.params);
+      res.status(200).json(postById);
+    },
+
 };
 
 module.exports = postController;

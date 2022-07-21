@@ -4,6 +4,7 @@ const postController = require('../controllers/postsController');
 const postRouter = Router();
 
 postRouter.post('/', postController.add);
+postRouter.get('/:id', postController.getPostById);
 postRouter.get('/', postController.getAllPosts);
 
 module.exports = postRouter;
