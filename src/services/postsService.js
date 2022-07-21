@@ -11,7 +11,7 @@ const postService = {
     const schema = Joi.object({
       title: Joi.string().required(),
       content: Joi.string().required(),
-      categoryIds: Joi.array().required().items(Joi.number()),
+      categoryIds: Joi.array().items(Joi.number()),
     }).messages({
       'string.empty': 'Some required fields are missing',
       'any.required': 'Some required fields are missing',
@@ -73,6 +73,10 @@ const postService = {
       });
       if (!getPostById) throwNotExistError('Post does not exist');
     return getPostById;
+   },
+
+   async edit(id, { title, content }) {
+    await models.BlogPost.update({ title, content }, { where: { id } });
    },
 };
 
