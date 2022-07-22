@@ -27,6 +27,7 @@ const postController = {
       await authService.validateAuthorization(req.headers.authorization);
       await authService.readToken(req.headers.authorization);
       const postById = await postService.getPostById(req.params);
+      console.log('rapadura');
       res.status(200).json(postById);
     },
 
