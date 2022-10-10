@@ -27,6 +27,9 @@ npm install
 ```bash
 npm start
 ```
+### 5 - Faça requisições para o servidor aberto na porta 3001
+Recomendo utilizar a extensão Thunder Client no VS Code para fazer as requisições
+
 ---
 
 ## Com docker
@@ -45,7 +48,7 @@ docker-compose up -d
 ```
 ### 4 - Abra o terminal do container
 ```bash
-docker exec -it talker_manager bash
+docker exec -it blogs_api bash
 ```
 ### 5 - Instale as dependências no terminal do container
 ```bash
@@ -55,6 +58,9 @@ npm install
 ```bash
 npm start
 ```
+### 7 - Faça requisições para o servidor aberto na porta 3001
+Recomendo utilizar a extensão Thunder Client no VS Code para fazer as requisições
+
  </details>
 
 
