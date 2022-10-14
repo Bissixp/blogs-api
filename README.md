@@ -10,9 +10,6 @@ Para fazer um post é necessário o usuário realizar uma autenticação, portan
   <summary><strong>:whale: Com Docker </strong></summary><br />
   
 
-
-## Com docker
-
 ### 1 - Clone o repositório
 ```bash
 git clone git@github.com:Bissixp/blogs-api.git
