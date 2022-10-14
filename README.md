@@ -7,30 +7,9 @@ Para fazer um post é necessário o usuário realizar uma autenticação, portan
 
 ## Instalação
 <details>
-  <summary><strong>:whale: Com Docker ou sem Docker</strong></summary><br />
+  <summary><strong>:whale: Com Docker </strong></summary><br />
   
-  ## Sem Docker
 
-  ### 1 - Clone o repositório
-```bash
-git clone git@github.com:Bissixp/blogs-api.git
-```
-  ### 2 - Mude para pasta do repositório
-```bash
-cd blogs-api
-```
-  ### 3 - Instale as dependências
-```bash
-npm install
-```
-  ### 4 - Rode o servidor
-```bash
-npm start
-```
-### 5 - Faça requisições para o servidor aberto na porta 3001
-Recomendo utilizar a extensão Thunder Client no VS Code para fazer as requisições
-
----
 
 ## Com docker
 
@@ -54,14 +33,38 @@ docker exec -it blogs_api bash
 ```bash
 npm install
 ```
-### 6 - Rode o servidor
+### 6 - Rode o servidor FORA do terminal do docker
 ```bash
 npm start
 ```
-### 7 - Faça requisições para o servidor aberto na porta 3001
+### 7 - Faça requisições para o servidor aberto na porta 3000
 Recomendo utilizar a extensão Thunder Client no VS Code para fazer as requisições
 
  </details>
+ <details>
+ <summary><strong>:computer: Sem Docker </strong></summary><br />
+
+
+  ### 1 - Clone o repositório
+```bash
+git clone git@github.com:Bissixp/blogs-api.git
+```
+  ### 2 - Mude para pasta do repositório
+```bash
+cd blogs-api
+```
+  ### 3 - Instale as dependências
+```bash
+npm install
+```
+  ### 4 - Rode o servidor
+```bash
+npm start
+```
+### 5 - Faça requisições para o servidor aberto na porta 3000
+Recomendo utilizar a extensão Thunder Client no VS Code para fazer as requisições
+</details>
+
 
 
 ## 📋 Tecnologias utilizadas
