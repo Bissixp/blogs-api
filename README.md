@@ -25,15 +25,15 @@ cd blogs-api
 ```bash
 docker-compose up -d
 ```
-### 4 - Abra o terminal do container
-```bash
-docker exec -it blogs_api bash
-```
-### 5 - Instale as dependências FORA do container
+### 4 - Instale as dependências
 ```bash
 npm install
 ```
-### 6 - Rode o servidor FORA do terminal do docker
+### 5 - Rode o comando para criar e popular o Banco de dados
+```bash
+npm run add
+```
+### 6 - Rode o servidor
 ```bash
 npm start
 ```
@@ -61,7 +61,11 @@ npm install
 ```bash
 npm start
 ```
-### 5 - Faça requisições para o servidor aberto na porta 3000
+### 5 - Rode o comando para criar e popular o Banco de dados
+```bash
+npm run add
+```
+### 6 - Faça requisições para o servidor aberto na porta 3000
 Recomendo utilizar a extensão Thunder Client no VS Code para fazer as requisições
 </details>
 
