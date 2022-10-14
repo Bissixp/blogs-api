@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const { throwTokenError } = require('./utils');
 
-const secret = process.env.JWT_SECRET;
+const secret = process.env.JWT_SECRET || 'mySecretPassword!';
 
 const authService = {
   async validateAuthorization(auth) {
