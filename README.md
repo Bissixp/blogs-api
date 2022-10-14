@@ -29,7 +29,7 @@ docker-compose up -d
 ```bash
 docker exec -it blogs_api bash
 ```
-### 5 - Instale as dependências no terminal do container
+### 5 - Instale as dependências FORA do container
 ```bash
 npm install
 ```
