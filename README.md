@@ -57,19 +57,25 @@ cd blogs-api
 ```bash
 npm install
 ```
-  ### 4 - Rode o servidor
-```bash
-npm start
-```
-### 5 - Rode o comando para criar e popular o Banco de dados
+ ### 4 - Rode o comando para criar e popular o Banco de dados
 ```bash
 npm run add
 ```
+ ### 5 - Rode o servidor
+```bash
+npm start
+```
+
 ### 6 - Faça requisições para o servidor aberto na porta 3000
 Recomendo utilizar a extensão Thunder Client no VS Code para fazer as requisições
 </details>
 
 
+  ### :warning: Caso tenha algum problema com o Banco de dados :warning:
+Rode o comando para resetar o Banco de dados:
+```bash
+npm run db:reset
+```
 
 ## 📋 Tecnologias utilizadas
 
