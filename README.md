@@ -1,11 +1,11 @@
 ## :newspaper: Blogs API
-Neste projeto foi desenvolvido uma API utilizando Node.js e o MySQL como banco de dados.
+Neste projeto foi desenvolvido uma API utilizando Node.js e o MySQL.
 
-O CRUD das rostas de posts foi contruido utilizando o pacote sequelize, os endpoints conectados seguem os princípios do REST.
+O CRUD das rotas de posts foi contruído utilizando o pacote sequelize. Os endpoints conectados seguem os princípios do REST.
 
-Para fazer um post é necessário o usuário realizar uma autenticação, a autenticação é feita através de users ou login.
+Para fazer um post é necessário o usuário realizar uma autenticação e está é feita através de users ou login.
 
-Por fim ao fazer uma postagem é feito todo relacionamento, entre o usuário, categoria e a postagem.
+Por fim, ao fazer uma postagem é feito todo relacionamento, entre o usuário, categoria e a postagem.
 
 ## Instalação
 <details>
@@ -83,7 +83,7 @@ npm run db:reset
   
 ### localhost:3000/user
 
-Responsável por cadastrar usuários no banco de dados e criar um token, trazer todos os usuários e trazer usuários por ID - (GET/POST)
+Responsável por cadastrar usuários no banco de dados criando um token, trazer todos os usuários e trazer usuários por ID - (GET/POST)
 
 Para cadastrar um usuário:
  ```json
@@ -101,7 +101,7 @@ Para cadastrar um usuário:
   
 ### localhost:3000/login 
 
-Responsável por gerar um token de um usuário já cadastrado no banco de dados - (POST)
+Responsável por gerar um token de usuário já cadastrado no banco de dados - (POST)
 
 Entrada:
  ```json
@@ -123,7 +123,7 @@ Resposta esperada:
   
 ### localhost:3000/categories
 
-Responsável por trazer todas as categorias e adicionar uma nova categoria, é necessário ter um token válido para utilizar essa rota - (GET/POST)
+Responsável por trazer todas as categorias e adicionar uma nova categoria. É necessário ter um token válido para utilizar essa rota - (GET/POST)
 
 para cadastrar uma categoria:
  ```json
@@ -138,7 +138,7 @@ para cadastrar uma categoria:
   
 ### localhost:3000/post
 
-Responsável por mostrar todas as postagens, fazer uma postagem e editar uma postagem - (GET/POST/PUT)
+Responsável por mostrar, criar e editar postagem - (GET/POST/PUT)
 
 Para fazer uma postagem:
  ```json
